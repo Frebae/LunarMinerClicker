@@ -16,9 +16,44 @@ const pickaxeButton = document.getElementById("pickaxe-button");
 const drillButton = document.getElementById("drill-button");
 const robotButton = document.getElementById("robot-button");
 
+function createMoonPieces() {
+
+    const moonWrapper = document.querySelector(".moon-wrapper");
+
+    for (let i = 0; i < 8; i++) {
+
+        const piece = document.createElement("span");
+
+        piece.classList.add("moon-piece");
+
+        const randomX = Math.floor(Math.random() * 200) - 100;
+        const randomY = Math.floor(Math.random() * 120) + 60;
+        const randomRotation = Math.floor(Math.random() * 720);
+
+        const randomSize = Math.floor(Math.random() * 8) + 8;
+
+        piece.style.width = randomSize + "px";
+        piece.style.height = randomSize + "px";
+
+        piece.style.setProperty("--x", randomX + "px");
+        piece.style.setProperty("--y", randomY + "px");
+        piece.style.setProperty("--rotation", randomRotation + "deg");
+
+        moonWrapper.appendChild(piece);
+
+        setTimeout(function () {
+            piece.remove();
+        }, 1000);
+    }
+}
+
 mineButton.addEventListener("click", function () {
+
     rocks = rocks + rocksPerClick;
     rockCount.textContent = rocks;
+
+    createMoonPieces();
+
 });
 
 pickaxeButton.addEventListener("click", function () {

@@ -27,7 +27,7 @@ h1 {
 
 #mine-button {
     padding: 18px 35px;
-    font-size: 20px;
+    font-size: 100px;
     cursor: pointer;
     margin: 20px;
 }
@@ -70,4 +70,134 @@ h1 {
 
 .mine-rock:active {
     transform: scale(0.95);
+}
+
+
+.upgrade-panel {
+    position: fixed;
+    top: 20px;
+    right: 300px;
+    width: 350px;
+
+    z-index: 100;
+}
+
+.moon-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
+.moon-piece {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    background: #a6a6ad;
+    border: 2px solid #5f5f68;
+    border-radius: 3px;
+
+    pointer-events: none;
+    z-index: 20;
+
+    animation: moon-piece-fall 1s ease-out forwards;
+}
+
+@keyframes moon-piece-fall {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            translate(0px, 0px)
+            rotate(0deg)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            translate(var(--x), var(--y))
+            rotate(var(--rotation))
+            scale(0.5);
+    }
+}
+
+
+    const moonWrapper = document.querySelector(".moon-wrapper");
+
+    for (let i = 0; i < 8; i++) {
+
+        const piece = document.createElement("span");
+
+        piece.classList.add("moon-piece");
+
+        const randomX = Math.floor(Math.random() * 200) - 100;
+        const randomY = Math.floor(Math.random() * 120) + 60;
+        const randomRotation = Math.floor(Math.random() * 720);
+
+        const randomSize = Math.floor(Math.random() * 8) + 8;
+
+        piece.style.width = randomSize + "px";
+        piece.style.height = randomSize + "px";
+
+        piece.style.setProperty("--x", randomX + "px");
+        piece.style.setProperty("--y", randomY + "px");
+        piece.style.setProperty("--rotation", randomRotation + "deg");
+
+        moonWrapper.appendChild(piece);
+
+        setTimeout(function () {
+            piece.remove();
+        }, 1000);
+    }
+}
+.black-hole {
+    position: fixed;
+
+    left: 80px;
+    bottom: 80px;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: black;
+
+    box-shadow:
+        0 0 10px 5px #6f5cff,
+        0 0 25px 10px #4635a8,
+        0 0 50px 15px rgba(100, 70, 255, 0.3);
+
+    pointer-events: none;
+
+    animation: black-hole-pulse 4s ease-in-out infinite;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle at 8% 12%, white 1px, transparent 2px),
+        radial-gradient(circle at 16% 35%, white 1px, transparent 2px),
+        radial-gradient(circle at 25% 75%, white 1px, transparent 2px),
+        radial-gradient(circle at 35% 20%, white 1px, transparent 2px),
+        radial-gradient(circle at 45% 60%, white 1px, transparent 2px),
+        radial-gradient(circle at 55% 10%, white 1px, transparent 2px),
+        radial-gradient(circle at 65% 80%, white 1px, transparent 2px),
+        radial-gradient(circle at 75% 40%, white 1px, transparent 2px),
+        radial-gradient(circle at 85% 15%, white 1px, transparent 2px),
+        radial-gradient(circle at 92% 70%, white 1px, transparent 2px);
+
+    pointer-events: none;
+    z-index: -1;
 }

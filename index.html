@@ -7,6 +7,8 @@
 
 <body>
 
+    <div class="black-hole"></div>
+
     <h1>Lunar Miner</h1>
     <p>Fre heet je welkom op de maan :D</p>
 
@@ -16,30 +18,42 @@
     <p>Rocks per click: <span id="rocks-per-click">1</span></p>
     <p>Rocks per second: <span id="rocks-per-second">0</span></p>
 
+    <div class="moon-wrapper">
     <button id="mine-button" class="mine-rock">🌑</button>
-<h2>Upgrades</h2>
-
-<div class="upgrade">
-    <h3>⛏️ Suspicious Pickaxe</h3>
-    <p>+1 Lunar Rock per click</p>
-    <p><i>Het is gewoon een pickaxe. Niet goedgekeurd door de arbeidsinspectie.</i></p>
-    <p>Cost: 10 Lunar Rocks</p>
-    <button id="pickaxe-button">Buy</button>
 </div>
-<div class="upgrade">
-    <h3>🛠️ Lunar Drill</h3>
-    <p>+3 Lunar Rocks per click</p>
-    <p><i>Eerst boren, dan meten..</i></p>
-    <p>Cost: 50 Lunar Rocks</p>
-    <button id="drill-button" disabled>Locked</button></div>
+    <p class="mine-text">Klik om te minen :D</p>
+
+
+<div class="upgrade-panel">
+
+    <h2>Upgrades</h2>
 
     <div class="upgrade">
-    <h3>🤖 Underpaid Robot</h3>
-    <p>+1 Lunar Rock per second</p>
-    <p><i>Werkt 24/7. Heeft geen arbeidsrechten.</i></p>
-    <p>Cost: 150 Lunar Rocks</p>
-    <button id="robot-button" disabled>Locked</button>
+        <h3>⛏️ Suspicious Pickaxe</h3>
+        <p>+1 Lunar Rock per click</p>
+        <p><i>Het is gewoon een pickaxe. Niet goedgekeurd door de arbeidsinspectie.</i></p>
+        <p>Cost: 10 Lunar Rocks</p>
+        <button id="pickaxe-button">Buy</button>
+    </div>
+
+    <div class="upgrade">
+        <h3>🛠️ Lunar Drill</h3>
+        <p>+3 Lunar Rocks per click</p>
+        <p><i>Eerst boren, dan meten..</i></p>
+        <p>Cost: 50 Lunar Rocks</p>
+        <button id="drill-button" disabled>Locked</button>
+    </div>
+
+    <div class="upgrade">
+        <h3>🤖 Underpaid Robot</h3>
+        <p>+1 Lunar Rock per second</p>
+        <p><i>Werkt 24/7. Heeft geen arbeidsrechten.</i></p>
+        <p>Cost: 150 Lunar Rocks</p>
+        <button id="robot-button" disabled>Locked</button>
+    </div>
+
 </div>
+
 
 <script src="script.js"></script>
 
