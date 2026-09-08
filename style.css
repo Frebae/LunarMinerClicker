@@ -83,12 +83,10 @@ h3 {
         3px 3px 0 #4c3c8a;
 }
 
-/* Main moon button */
 #mine-button {
-    padding: 18px 35px;
-    font-size: 100px;
-    cursor: pointer;
+    padding: 0;
     margin: 20px;
+    cursor: pointer;
 
     background: transparent;
     border: none;
