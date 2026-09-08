@@ -202,7 +202,7 @@ body::before {
     z-index: -1;
 }
 
-.upgrade {
+.stats-panel {
     position: fixed;
     top: 30px;
     left: 100px;
