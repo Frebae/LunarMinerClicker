@@ -202,14 +202,17 @@ body::before {
     z-index: -1;
 }
 
-.upgrade,
-.stats-panel {
+.upgrade {
+    position: fixed;
+    top: 30px;
+    left: 100px;
+
     width: 300px;
-    margin: 15px auto;
     padding: 15px;
 
     background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
 
+    text-align: center;
 }
