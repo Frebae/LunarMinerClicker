@@ -2,6 +2,10 @@ let rocks = 0;
 let rocksPerClick = 1;
 let rocksPerSecond = 0;
 
+let totalRocks = 0;
+let totalClicks = 0;
+let totalUpgrades = 0;
+
 let pickaxeBought = false;
 let drillBought = false;
 let robotBought = false;
@@ -15,6 +19,10 @@ const rocksPerSecondDisplay = document.getElementById("rocks-per-second");
 const pickaxeButton = document.getElementById("pickaxe-button");
 const drillButton = document.getElementById("drill-button");
 const robotButton = document.getElementById("robot-button");
+
+const totalRocksDisplay = document.getElementById("total-rocks");
+const totalClickDisplay = document.getElementById("total-clicks");
+const totalUpgradesDisplay = document.getElementById("total-upgrades");
 
 function createMoonPieces() {
 
@@ -50,7 +58,14 @@ function createMoonPieces() {
 mineButton.addEventListener("click", function () {
 
     rocks = rocks + rocksPerClick;
+
+    totalRocks = totalRocks + rocksPerClick;
+    totalClicks = totalClicks + 1;
+
+
     rockCount.textContent = rocks;
+    totalRocksDisplay.textContent = totalRocks;
+    totalClickDisplay.textContent = totalClicks;
 
     createMoonPieces();
 
@@ -61,6 +76,8 @@ pickaxeButton.addEventListener("click", function () {
         rocks = rocks - 10;
         rocksPerClick = rocksPerClick + 1;
         pickaxeBought = true;
+        totalUpgrades = totalUpgrades + 1;
+        totalUpgradesDisplay.textContent = totalUpgrades;
 
         rockCount.textContent = rocks;
         rocksPerClickDisplay.textContent = rocksPerClick;
@@ -78,6 +95,9 @@ drillButton.addEventListener("click", function () {
         rocks = rocks - 50;
         rocksPerClick = rocksPerClick + 3;
         drillBought = true;
+        totalUpgrades = totalUpgrades + 1;
+        totalUpgradesDisplay.textContent = totalUpgrades;
+    
 
         rockCount.textContent = rocks;
         rocksPerClickDisplay.textContent = rocksPerClick;
@@ -95,6 +115,8 @@ robotButton.addEventListener("click", function () {
         rocks = rocks - 150;
         rocksPerSecond = rocksPerSecond + 1;
         robotBought = true;
+        totalUpgrades = totalUpgrades +1;
+        totalUpgradesDisplay.textContent = totalUpgrades;
 
         rockCount.textContent = rocks;
         rocksPerSecondDisplay.textContent = rocksPerSecond;
@@ -106,5 +128,9 @@ robotButton.addEventListener("click", function () {
 
 setInterval(function () {
     rocks = rocks + rocksPerSecond;
+    totalRocks = totalRocks + rocksPerSecond
+
     rockCount.textContent = rocks;
+    totalRocksDisplay.textContent = totalRocks;
+    
 }, 1000);
