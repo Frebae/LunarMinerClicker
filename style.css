@@ -94,18 +94,14 @@ h3 {
     border: none;
 }
 
-/* Pixel-style moon */
-.mine-rock {
-    font-size: 120px;
-    background: none;
-    border: none;
+.mine-rock img {
+    width: 150px;
+    height: 150px;
 
-    filter:
-        contrast(1.25)
-        saturate(1.15);
-
+    object-fit: contain;
     image-rendering: pixelated;
 
+    display: block;
 }
 
 .mine-rock:hover {
