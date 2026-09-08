@@ -2,185 +2,41 @@ body {
     margin: 0;
     min-height: 100vh;
 
-    background: linear-gradient(
-        180deg,
-        #080812 0%,
-        #11112b 50%,
-        #1b1740 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #080812 0%,
+            #101028 55%,
+            #1a1640 100%
+        );
 
     color: white;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: "Courier New", monospace;
+
+    image-rendering: pixelated;
 }
 
-h1 {
-    font-size: 40px;
-    margin-bottom: 5px;
-}
-
-#rock-count {
-    font-size: 48px;
-    font-weight: bold;
-    margin: 10px;
-}
-
-#mine-button {
-    padding: 18px 35px;
-    font-size: 100px;
-    cursor: pointer;
-    margin: 20px;
-}
-
-.upgrade {
-    width: 300px;
-    margin: 15px auto;
-    padding: 15px;
-
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-}
-
-.upgrade h3 {
-    margin-top: 5px;
-}
-
-.upgrade button {
-    padding: 10px 25px;
-    cursor: pointer;
-}
-
-.upgrade button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-}
-
-.mine-rock {
-    font-size: 120px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.1s;
-}
-
-.mine-rock:hover {
-    transform: scale(1.05);
-}
-
-.mine-rock:active {
-    transform: scale(0.95);
-}
-
-
-.upgrade-panel {
+/* Pixel-like scanlines */
+body::after {
+    content: "";
     position: fixed;
-    top: 20px;
-    right: 300px;
-    width: 350px;
+    inset: 0;
 
-    z-index: 100;
-}
-
-.moon-wrapper {
-    position: relative;
-    display: inline-block;
-    overflow: visible;
-}
-
-.moon-piece {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 12px;
-    height: 12px;
-
-    background: #a6a6ad;
-    border: 2px solid #5f5f68;
-    border-radius: 3px;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.018) 0px,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px,
+            transparent 4px
+        );
 
     pointer-events: none;
-    z-index: 20;
-
-    animation: moon-piece-fall 1s ease-out forwards;
+    z-index: 999;
 }
 
-@keyframes moon-piece-fall {
-
-    0% {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            translate(0px, 0px)
-            rotate(0deg)
-            scale(1);
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            translate(var(--x), var(--y))
-            rotate(var(--rotation))
-            scale(0.5);
-    }
-}
-
-
-    const moonWrapper = document.querySelector(".moon-wrapper");
-
-    for (let i = 0; i < 8; i++) {
-
-        const piece = document.createElement("span");
-
-        piece.classList.add("moon-piece");
-
-        const randomX = Math.floor(Math.random() * 200) - 100;
-        const randomY = Math.floor(Math.random() * 120) + 60;
-        const randomRotation = Math.floor(Math.random() * 720);
-
-        const randomSize = Math.floor(Math.random() * 8) + 8;
-
-        piece.style.width = randomSize + "px";
-        piece.style.height = randomSize + "px";
-
-        piece.style.setProperty("--x", randomX + "px");
-        piece.style.setProperty("--y", randomY + "px");
-        piece.style.setProperty("--rotation", randomRotation + "deg");
-
-        moonWrapper.appendChild(piece);
-
-        setTimeout(function () {
-            piece.remove();
-        }, 1000);
-    }
-}
-.black-hole {
-    position: fixed;
-
-    left: 80px;
-    bottom: 80px;
-
-    width: 90px;
-    height: 90px;
-
-    border-radius: 50%;
-
-    background: black;
-
-    box-shadow:
-        0 0 10px 5px #6f5cff,
-        0 0 25px 10px #4635a8,
-        0 0 50px 15px rgba(100, 70, 255, 0.3);
-
-    pointer-events: none;
-
-    animation: black-hole-pulse 4s ease-in-out infinite;
-}
+/* Stars */
 body::before {
     content: "";
     position: fixed;
@@ -202,6 +58,137 @@ body::before {
     z-index: -1;
 }
 
+/* Titles */
+h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+
+    letter-spacing: 2px;
+    text-shadow:
+        3px 3px 0 #4c3c8a;
+}
+
+h2,
+h3 {
+    letter-spacing: 1px;
+}
+
+/* Main rock counter */
+#rock-count {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 10px;
+
+    text-shadow:
+        3px 3px 0 #4c3c8a;
+}
+
+/* Main moon button */
+#mine-button {
+    padding: 18px 35px;
+    font-size: 100px;
+    cursor: pointer;
+    margin: 20px;
+
+    background: transparent;
+    border: none;
+}
+
+/* Pixel-style moon */
+.mine-rock {
+    font-size: 120px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    image-rendering: pixelated;
+
+    transition:
+        transform 0.08s,
+        filter 0.08s;
+}
+
+.mine-rock:hover {
+    transform: scale(1.04);
+    filter: brightness(1.15);
+}
+
+.mine-rock:active {
+    transform: translate(3px, 3px) scale(0.96);
+}
+
+/* Upgrade column */
+.upgrade-panel {
+    position: fixed;
+    top: 20px;
+    right: 300px;
+    width: 350px;
+
+    z-index: 100;
+}
+
+/* Upgrade cards */
+.upgrade {
+    width: 300px;
+    margin: 15px auto;
+    padding: 15px;
+
+    background: #1d1c32;
+
+    border: 3px solid #7665bd;
+    border-radius: 0;
+
+    box-shadow:
+        5px 5px 0 #090912,
+        inset 0 0 0 2px #37315f;
+}
+
+.upgrade h3 {
+    margin-top: 5px;
+    text-shadow:
+        2px 2px 0 #4c3c8a;
+}
+
+/* Pixel buttons */
+.upgrade button {
+    padding: 10px 22px;
+
+    background: #7665bd;
+    color: white;
+
+    border: 2px solid #d7d0ff;
+    border-radius: 0;
+
+    box-shadow:
+        4px 4px 0 #332958;
+
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.upgrade button:hover:not(:disabled) {
+    background: #8b78df;
+}
+
+.upgrade button:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow:
+        1px 1px 0 #332958;
+}
+
+.upgrade button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+
+    background: #555465;
+    border-color: #777684;
+    box-shadow:
+        4px 4px 0 #292833;
+}
+
+/* Mining stats */
 .stats-panel {
     position: fixed;
     top: 30px;
@@ -210,9 +197,106 @@ body::before {
     width: 300px;
     padding: 15px;
 
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+    background: #1d1c32;
+
+    border: 3px solid #7665bd;
+    border-radius: 0;
+
+    box-shadow:
+        5px 5px 0 #090912,
+        inset 0 0 0 2px #37315f;
 
     text-align: center;
+}
+
+.stats-panel h2 {
+    margin-top: 5px;
+
+    text-shadow:
+        2px 2px 0 #4c3c8a;
+}
+
+/* Moon click particles */
+.moon-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+
+.moon-piece {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    background: #9a88d9;
+    border: 2px solid #4d416f;
+    border-radius: 0;
+
+    box-shadow:
+        2px 2px 0 #221d36;
+
+    pointer-events: none;
+    z-index: 20;
+
+    animation: moon-piece-fall 0.8s steps(6) forwards;
+}
+
+@keyframes moon-piece-fall {
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            translate(0px, 0px)
+            rotate(0deg)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            translate(var(--x), var(--y))
+            rotate(var(--rotation))
+            scale(0.5);
+    }
+}
+
+/* Black hole */
+.black-hole {
+    position: fixed;
+
+    left: 80px;
+    bottom: 80px;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+    background: black;
+
+    box-shadow:
+        0 0 0 4px #6f5cff,
+        0 0 0 8px #342b70,
+        0 0 24px 10px rgba(100, 70, 255, 0.35);
+
+    pointer-events: none;
+
+    animation: black-hole-pulse 1.2s steps(2) infinite;
+}
+
+@keyframes black-hole-pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
 }
