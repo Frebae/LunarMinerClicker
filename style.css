@@ -257,7 +257,7 @@ h3 {
             translate(-50%, -50%)
             translate(var(--x), var(--y))
             rotate(var(--rotation))
-            scale(0.5);
+            scale(1.8);
     }
 }
 
@@ -370,4 +370,95 @@ body::after {
     border-top: 4px solid #342e63;
 
     z-index: -1;
+}
+
+.how-to-play {
+    position: fixed;
+    top: 235px;
+    left: 350px;
+
+    width: 300px;
+    padding: 15px;
+
+    background: #1d1c32;
+    border: 3px solid #7665bd;
+
+    box-shadow:
+        5px 5px 0 #090912,
+        inset 0 0 0 2px #37315f;
+}
+
+.stats-panel h2,
+.how-to-play h2 {
+    margin-top: 5px;
+    color: white;
+    text-shadow: 2px 2px 0 #4c3c8a;
+}
+
+.moon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.pickaxe-animation {
+    position: absolute;
+
+    width: 120px;
+
+    top: 40px;
+    right: -20px;
+
+    opacity: 0;
+
+    transform-origin: bottom right;
+
+    pointer-events: none;
+}
+
+.pickaxe-animation.swing {
+    opacity: 1;
+    animation: pickaxeSwing 0.25s ease-out;
+}
+
+@keyframes pickaxeSwing {
+    0% {
+        transform: rotate(-40deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+#music-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#music-button img {
+    width: 180px;
+    height: auto;
+
+    image-rendering: pixelated;
+    display: block;
+}
+
+#music-button:hover {
+    transform: scale(1.05);
+}
+
+#music-button:active {
+    transform: scale(0.95);
 }

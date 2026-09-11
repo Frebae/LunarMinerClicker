@@ -24,6 +24,11 @@ const totalRocksDisplay = document.getElementById("total-rocks");
 const totalClickDisplay = document.getElementById("total-clicks");
 const totalUpgradesDisplay = document.getElementById("total-upgrades");
 
+const pickaxeAnimation = document.getElementById("pickaxe-animation");
+
+const backgroundMusic = document.getElementById("background-music");
+const musicButton = document.getElementById("music-button");
+
 function createMoonPieces() {
 
     const moonWrapper = document.querySelector(".moon-wrapper");
@@ -52,7 +57,9 @@ function createMoonPieces() {
         setTimeout(function () {
             piece.remove();
         }, 1000);
-    }
+   
+
+
 }
 
 mineButton.addEventListener("click", function () {
@@ -61,6 +68,15 @@ mineButton.addEventListener("click", function () {
 
     totalRocks = totalRocks + rocksPerClick;
     totalClicks = totalClicks + 1;
+
+        if (pickaxeBought) {
+            pickaxeAnimation.classList.remove("swing");
+
+            void pickaxeAnimation.offsetWidth;
+            
+            pickaxeAnimation.classList.add("swing");
+                }
+            
 
 
     rockCount.textContent = rocks;
@@ -134,3 +150,15 @@ setInterval(function () {
     totalRocksDisplay.textContent = totalRocks;
     
 }, 1000);
+
+ }
+    
+musicButton.addEventListener("click", function () {
+
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+    } else {
+        backgroundMusic.pause();
+    }
+
+});

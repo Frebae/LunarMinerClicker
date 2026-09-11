@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<div class="lunar-ground"></div>
+<div class="lunar   -ground"></div>
 
 <body>
 
@@ -21,11 +21,15 @@
     <p>Rocks per click: <span id="rocks-per-click">1</span></p>
     <p>Rocks per second: <span id="rocks-per-second">0</span></p>
 
-    <div class="moon-wrapper">
+ <div class="moon-wrapper">
     <button id="mine-button" class="mine-rock">
         <img src="imagess/pixel-moon.png" alt="Pixel moon">
     </button>
 
+    <img id="pickaxe-animation"
+         class="pickaxe-animation"
+         src="imagess/pickaxe.png"
+         alt="Pickaxe">
 </div>
     <p class="mine-text">Klik om te minen :D</p>
 
@@ -65,6 +69,22 @@
     <p>Total Clicks: <span id="total-clicks">0</span></p>
     <p>Upgrades Purchased: <span id="total-upgrades">0</span></p>
 </div>
+
+<div class="how-to-play">
+    <h2>Uitleg</h2>
+    <p>Klik op de maan om Lunar Rocks te minen.</p>
+    <p>Gebruik jouw rocks voor upgrades om sneller te minen!</p>
+</div>
+
+
+<audio id="background-music" loop>
+    <source src="sounds/background.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-button">
+    <img src="imagess/music-on.png" alt="Music">
+</button>
+
 </div>
 
 
