@@ -462,3 +462,324 @@ body::after {
 #music-button:active {
     transform: scale(0.95);
 }
+
+/* =====================================================
+   RESPONSIVE LUNAR MINER
+===================================================== */
+
+
+/* -------------------------
+   SMALLER DESKTOP / LAPTOP
+------------------------- */
+
+@media (max-width: 1500px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    /* Stats more to the left */
+    .stats-panel {
+        left: 30px;
+    }
+
+    /* Explanation follows stats */
+    .how-to-play {
+        left: 30px;
+    }
+
+    /* Upgrades more to the right edge */
+    .upgrade-panel {
+        right: 30px;
+    }
+
+    /* Slightly smaller moon */
+    .mine-rock img {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Smaller pickaxe to match moon */
+    .pickaxe-animation {
+        width: 100px;
+        top: 35px;
+        right: -15px;
+    }
+
+    /* Move black hole */
+    .black-hole {
+        left: 50px;
+        bottom: 50px;
+    }
+}
+
+
+/* -------------------------
+   SMALL LAPTOP / TABLET
+------------------------- */
+
+@media (max-width: 1050px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        padding-bottom: 60px;
+    }
+
+    /*
+       Stop using fixed positions.
+       Elements now enter normal page flow.
+    */
+
+    .stats-panel {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: min(500px, 85%);
+
+        margin: 100px auto 20px auto;
+    }
+
+
+    .how-to-play {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: min(500px, 85%);
+
+        margin: 20px auto;
+    }
+
+
+    .upgrade-panel {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: min(500px, 90%);
+
+        margin: 30px auto;
+    }
+
+
+    .upgrade {
+        box-sizing: border-box;
+
+        width: 100%;
+        max-width: 500px;
+
+        margin: 15px auto;
+    }
+
+
+    /* Moon */
+    .moon-wrapper {
+        display: block;
+
+        width: fit-content;
+
+        margin: 30px auto;
+    }
+
+
+    .mine-rock img {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    /* Music stays visible in corner */
+    #music-button {
+        top: 15px;
+        left: 15px;
+    }
+
+
+    #music-button img {
+        width: 150px;
+    }
+
+
+    /* Decorative object */
+    .black-hole {
+        display: none;
+    }
+}
+
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        padding: 0 10px 50px 10px;
+
+        box-sizing: border-box;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+
+    #rock-count {
+        font-size: 38px;
+    }
+
+
+    /* Music button */
+    #music-button {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        display: block;
+
+        width: fit-content;
+
+        margin: 15px auto 25px auto;
+    }
+
+
+    #music-button img {
+        width: 140px;
+    }
+
+
+    /* Moon */
+    .moon-wrapper {
+        margin: 25px auto;
+    }
+
+
+    #mine-button {
+        margin: 10px;
+    }
+
+
+    .mine-rock img {
+        width: min(220px, 65vw);
+        height: auto;
+    }
+
+
+    /* Pickaxe animation */
+    .pickaxe-animation {
+        width: 80px;
+
+        top: 25px;
+        right: -5px;
+    }
+
+
+    /* Cards */
+    .stats-panel,
+    .how-to-play,
+    .upgrade-panel {
+        box-sizing: border-box;
+
+        width: 94%;
+        max-width: 500px;
+
+        margin: 20px auto;
+    }
+
+
+    .upgrade {
+        box-sizing: border-box;
+
+        width: 100%;
+
+        padding: 14px;
+    }
+
+
+    /* Upgrade buttons */
+    .upgrade button {
+        box-sizing: border-box;
+
+        width: 100%;
+
+        padding: 12px 8px;
+
+        white-space: normal;
+    }
+
+
+    /* Smaller headings */
+    .stats-panel h2,
+    .how-to-play h2 {
+        font-size: 22px;
+    }
+
+
+    .upgrade h3 {
+        font-size: 19px;
+    }
+}
+
+
+/* -------------------------
+   SMALL PHONES
+------------------------- */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+
+    #rock-count {
+        font-size: 32px;
+    }
+
+
+    .mine-rock img {
+        width: 190px;
+    }
+
+
+    .pickaxe-animation {
+        width: 70px;
+
+        top: 20px;
+        right: 0;
+    }
+
+
+    #music-button img {
+        width: 120px;
+    }
+
+
+    .stats-panel,
+    .how-to-play,
+    .upgrade-panel {
+        width: 96%;
+    }
+
+
+    .upgrade {
+        padding: 12px;
+    }
+}
