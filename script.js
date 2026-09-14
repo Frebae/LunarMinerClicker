@@ -13,13 +13,13 @@ let drillLevel = 0;
 let robotLevel = 0;
 
 
-// Upgrade costs
+// Upgrade kosten
 let pickaxeCost = 10;
 let drillCost = 50;
 let robotCost = 150;
 
 
-// Game elements
+// Game weergave
 const mineButton = document.getElementById("mine-button");
 const rockCount = document.getElementById("rock-count");
 
@@ -27,7 +27,7 @@ const rocksPerClickDisplay = document.getElementById("rocks-per-click");
 const rocksPerSecondDisplay = document.getElementById("rocks-per-second");
 
 
-// Upgrade buttons
+// Upgrade knoppen
 const pickaxeButton = document.getElementById("pickaxe-button");
 const drillButton = document.getElementById("drill-button");
 const robotButton = document.getElementById("robot-button");
@@ -39,20 +39,19 @@ const totalClickDisplay = document.getElementById("total-clicks");
 const totalUpgradesDisplay = document.getElementById("total-upgrades");
 
 
-// Pickaxe animation
+// Pickaxe animatie
 const pickaxeAnimation = document.getElementById("pickaxe-animation");
 
 
-// Music
+// muziek bro
 const backgroundMusic = document.getElementById("background-music");
 const musicButton = document.getElementById("music-button");
 const musicIcon = document.getElementById("music-icon");
 
 
 
-/* -------------------------
-   MOON PARTICLES
-------------------------- */
+/* maan particles graahhhhh
+    */
 
 function createMoonPieces() {
 
@@ -100,7 +99,7 @@ function createMoonPieces() {
         moonWrapper.appendChild(piece);
 
 
-        // Remove particle after animation
+        // verwijder particle na klik
         setTimeout(function () {
 
             piece.remove();
@@ -111,9 +110,7 @@ function createMoonPieces() {
 
 
 
-/* -------------------------
-   MOON CLICK
-------------------------- */
+/* Maan click*/
 
 mineButton.addEventListener("click", function () {
 
@@ -126,7 +123,7 @@ mineButton.addEventListener("click", function () {
         totalClicks + 1;
 
 
-    // Show pickaxe animation after first pickaxe level
+    // pickaxe animatie na 1e unlock
     if (pickaxeLevel >= 1) {
 
         pickaxeAnimation.classList.remove("swing");
@@ -152,9 +149,7 @@ mineButton.addEventListener("click", function () {
 
 
 
-/* -------------------------
-   PICKAXE
-------------------------- */
+/* pickaxe dingen */
 
 pickaxeButton.addEventListener("click", function () {
 
@@ -174,7 +169,7 @@ pickaxeButton.addEventListener("click", function () {
             totalUpgrades + 1;
 
 
-        // Price doubles every level
+        // KOst verdubbeld iedere level
         pickaxeCost =
             pickaxeCost * 2;
 
@@ -196,7 +191,7 @@ pickaxeButton.addEventListener("click", function () {
             pickaxeCost;
 
 
-        // Unlock drill after first pickaxe level
+        // Unlock drill na 1e pickaxe level
         if (pickaxeLevel >= 1 && drillLevel === 0) {
 
             drillButton.disabled = false;
@@ -208,9 +203,7 @@ pickaxeButton.addEventListener("click", function () {
 
 
 
-/* -------------------------
-   DRILL
-------------------------- */
+/* Drill*/
 
 drillButton.addEventListener("click", function () {
 
@@ -254,7 +247,7 @@ drillButton.addEventListener("click", function () {
             drillCost;
 
 
-        // Unlock robot after first drill level
+        // Unlock robot na drill
         if (drillLevel >= 1 && robotLevel === 0) {
 
             robotButton.disabled = false;
@@ -266,9 +259,7 @@ drillButton.addEventListener("click", function () {
 
 
 
-/* -------------------------
-   ROBOT
-------------------------- */
+/* Robot*/
 
 robotButton.addEventListener("click", function () {
 
@@ -316,9 +307,7 @@ robotButton.addEventListener("click", function () {
 
 
 
-/* -------------------------
-   AUTOMATIC ROCKS
-------------------------- */
+/* automatische rocks*/
 
 setInterval(function () {
 
@@ -339,9 +328,7 @@ setInterval(function () {
 
 
 
-/* -------------------------
-   MUSIC
-------------------------- */
+/* muziekj liedje waaaa */
 
 musicButton.addEventListener("click", function () {
 

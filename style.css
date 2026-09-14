@@ -17,7 +17,7 @@ body {
     image-rendering: pixelated;
 }
 
-/* Pixel-like scanlines */
+/* Pixel lines */
 body::after {
     content: "";
     position: fixed;
@@ -36,7 +36,7 @@ body::after {
     z-index: 999;
 }
 
-/* Stars */
+/* Sterren */
 body::before {
     content: "";
     position: fixed;
@@ -58,7 +58,7 @@ body::before {
     z-index: -1;
 }
 
-/* Titles */
+/* Titels */
 h1 {
     font-size: 36px;
     margin-bottom: 5px;
@@ -73,7 +73,7 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* Main rock counter */
+/* Main rock teller */
 #rock-count {
     font-size: 48px;
     font-weight: bold;
@@ -111,7 +111,7 @@ h3 {
     transform: translate(3px, 3px) scale(0.96);
 }
 
-/* Upgrade column */
+/* Upgrade kolom */
 .upgrade-panel {
     position: fixed;
     top: 20px;
@@ -121,7 +121,7 @@ h3 {
     z-index: 100;
 }
 
-/* Upgrade cards */
+/* Upgrade sectie */
 .upgrade {
     width: 300px;
     margin: 15px auto;
@@ -143,7 +143,7 @@ h3 {
         2px 2px 0 #4c3c8a;
 }
 
-/* Pixel buttons */
+/* Pixel knopjes */
 .upgrade button {
     padding: 10px 22px;
 
@@ -210,7 +210,7 @@ h3 {
         2px 2px 0 #4c3c8a;
 }
 
-/* Moon click particles */
+/* Moon klik particles */
 .moon-wrapper {
     position: relative;
     display: inline-block;
@@ -463,14 +463,10 @@ body::after {
     transform: scale(0.95);
 }
 
-/* =====================================================
-   RESPONSIVE LUNAR MINER
-===================================================== */
+/* Responsive voor andere platforms */
 
 
-/* -------------------------
-   SMALLER DESKTOP / LAPTOP
-------------------------- */
+/* kleinere desktops/laptop*/
 
 @media (max-width: 1500px) {
 
@@ -479,35 +475,34 @@ body::after {
         overflow-y: auto;
     }
 
-    /* Stats more to the left */
     .stats-panel {
         left: 30px;
     }
 
-    /* Explanation follows stats */
+
     .how-to-play {
         left: 30px;
     }
 
-    /* Upgrades more to the right edge */
+   
     .upgrade-panel {
         right: 30px;
     }
 
-    /* Slightly smaller moon */
+   
     .mine-rock img {
         width: 250px;
         height: 250px;
     }
 
-    /* Smaller pickaxe to match moon */
+    
     .pickaxe-animation {
         width: 100px;
         top: 35px;
         right: -15px;
     }
 
-    /* Move black hole */
+
     .black-hole {
         left: 50px;
         bottom: 50px;
@@ -515,9 +510,7 @@ body::after {
 }
 
 
-/* -------------------------
-   SMALL LAPTOP / TABLET
-------------------------- */
+/* Tablet*/
 
 @media (max-width: 1050px) {
 
@@ -528,10 +521,6 @@ body::after {
         padding-bottom: 60px;
     }
 
-    /*
-       Stop using fixed positions.
-       Elements now enter normal page flow.
-    */
 
     .stats-panel {
         position: relative;
@@ -579,7 +568,7 @@ body::after {
     }
 
 
-    /* Moon */
+
     .moon-wrapper {
         display: block;
 
@@ -595,7 +584,7 @@ body::after {
     }
 
 
-    /* Music stays visible in corner */
+    
     #music-button {
         top: 15px;
         left: 15px;
@@ -607,16 +596,14 @@ body::after {
     }
 
 
-    /* Decorative object */
+
     .black-hole {
         display: none;
     }
 }
 
 
-/* -------------------------
-   MOBILE
-------------------------- */
+/* Mobiel */
 
 @media (max-width: 768px) {
 
@@ -640,7 +627,7 @@ body::after {
     }
 
 
-    /* Music button */
+
     #music-button {
         position: relative;
 
@@ -660,7 +647,7 @@ body::after {
     }
 
 
-    /* Moon */
+
     .moon-wrapper {
         margin: 25px auto;
     }
@@ -677,7 +664,7 @@ body::after {
     }
 
 
-    /* Pickaxe animation */
+   
     .pickaxe-animation {
         width: 80px;
 
@@ -686,7 +673,7 @@ body::after {
     }
 
 
-    /* Cards */
+
     .stats-panel,
     .how-to-play,
     .upgrade-panel {
@@ -708,7 +695,7 @@ body::after {
     }
 
 
-    /* Upgrade buttons */
+    
     .upgrade button {
         box-sizing: border-box;
 
@@ -720,7 +707,7 @@ body::after {
     }
 
 
-    /* Smaller headings */
+    
     .stats-panel h2,
     .how-to-play h2 {
         font-size: 22px;
@@ -731,11 +718,6 @@ body::after {
         font-size: 19px;
     }
 }
-
-
-/* -------------------------
-   SMALL PHONES
-------------------------- */
 
 @media (max-width: 480px) {
 
