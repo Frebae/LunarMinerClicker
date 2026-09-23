@@ -14,7 +14,7 @@ https://lunarminerclicker.freyablankert.workers.dev
 - CSS
 - JavaScript
 - Git / GitHub
-- Cloudflare voor hosting
+- Cloudflare for hosting
 
 ## Project Structure
 
