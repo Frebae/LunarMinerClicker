@@ -1,8 +1,8 @@
 # Lunar Miner
 
-Lunar Miner is een browser-based idle clicker game die ik heb gemaakt tijdens mijn eerste ICT challenge bij Fontys.
+Lunar Miner is a browser-based idle clicker game that I made during my first ICT challenge at Fontys.
 
-Het doel van dit project was niet alleen om een werkende game te maken, maar vooral om te leren hoe HTML, CSS en JavaScript samenwerken.
+The goal of this project was not only to create a working game, but mainly to learn how HTML, CSS, and JavaScript work together.
 
 ## Live Version
 
