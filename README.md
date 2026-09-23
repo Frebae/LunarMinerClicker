@@ -4,7 +4,7 @@ Lunar Miner is een browser-based idle clicker game die ik heb gemaakt tijdens mi
 
 Het doel van dit project was niet alleen om een werkende game te maken, maar vooral om te leren hoe HTML, CSS en JavaScript samenwerken.
 
-## Live version
+## Live Version
 
 https://lunarminerclicker.freyablankert.workers.dev
 
@@ -16,7 +16,7 @@ https://lunarminerclicker.freyablankert.workers.dev
 - Git / GitHub
 - Cloudflare voor hosting
 
-## Project struction
+## Project Structure
 
 ```text
 LunarMinerClicker/
@@ -31,3 +31,17 @@ LunarMinerClicker/
 ├── README.md
 ├── script.js
 └── style.css
+
+## Project Architecture
+
+My project mainly consists of three parts: HTML, CSS and JavaScript.
+
+- `index.html` contains the structure of the game. It includes elements such as the moon, the upgrades, the Mining Stats panel and the music button.
+- `style.css` controls how the game looks. It contains the colors, positioning, animations and responsive design.
+- `script.js` contains the game logic. It keeps track of the amount of Lunar Rocks, handles upgrades and controls features such as the moon particles and background music.
+
+JavaScript connects to elements in the HTML through the DOM. For example, when the player clicks on the moon, JavaScript processes the click, changes the amount of Lunar Rocks and updates the value shown in the HTML.
+
+CSS is then used to control how these elements look and how the animations are displayed.
+
+The `imagess` and `sounds` folders contain the images and audio files that are used by the project.
